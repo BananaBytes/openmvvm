@@ -1,0 +1,54 @@
+﻿.container {
+    padding: 10px;
+    background: white;
+}
+
+/*a little bit of reset*/
+#services-list, #services-list p, #services-list h3 {
+list-style: none;
+margin:0; padding:0;
+}
+
+#services-list > li{  
+  margin-bottom: 20px;
+  width: 200px;
+}
+
+#services-list > li > .image{
+  display:block;
+  float:left;
+  margin-right:10px;
+}
+
+/*
+this instructions are to force the dimensions of image and its container <a>
+*/
+#services-list > li > .image,
+#services-list > li > .image > img{
+  width:64px; height:64px;
+}
+
+input[type="text"] {
+  display: block;
+  margin: 0;
+  width: 300px;
+  font-family: sans-serif;
+  font-size: 18px;
+  appearance: none;
+  box-shadow: none;
+  border-radius: none;
+}
+
+input[type="text"]:focus {
+  outline: none;
+}
+
+.style-2 input[type="text"] {
+  padding: 10px;
+  border: solid 5px #c9c9c9;
+  transition: border 0.3s;
+}
+.style-2 input[type="text"]:focus,
+.style-2 input[type="text"].focus {
+  border: solid 5px #969696;
+}
