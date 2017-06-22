@@ -25,7 +25,6 @@ var receiveMessage = function(context, message) {
 
 var sendMessage = function(message) {
     Mt.App.fireEvent('doNativeStuff', message);
-    //NotifyCs.notify(JSON.stringify(message));
 };
 
 Mt.App.addEventListener('receiveMessage',

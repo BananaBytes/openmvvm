@@ -7,11 +7,6 @@ namespace OpenMVVM.Ios.PlatformServices
 
     public class FileServices : IFileServices
     {
-        public FileServices()
-        {
-            
-        }
-
         public void WriteFile(string filename, string content)
         {
             var documentsPath = Environment.GetFolderPath(Environment.SpecialFolder.Personal);

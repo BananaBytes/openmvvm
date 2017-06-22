@@ -23,12 +23,6 @@
         {
             this.instanceFactory = instanceFactory;
             this.lifecycleService = lifecycleService;
-
-            //SystemNavigationManager.GetForCurrentView().BackRequested += (s, o) =>
-            //    {
-            //        o.Handled = true;
-            //        this.GoBack();
-            //    };
         }
 
         public async Task<bool> NavigateTo(string pageName, object parameter = null, bool removeBackEntry = false)

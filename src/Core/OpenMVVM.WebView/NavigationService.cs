@@ -16,8 +16,6 @@ namespace OpenMVVM.WebView
 
         private string currentView;
 
-        //private MainPage<TLocator> mainPage = (MainPage<TLocator>)Window.Current.Content;
-
         private List<string> backStack = new List<string>() { };
 
         public NavigationService(ILifecycleService lifecycleService)
@@ -62,8 +60,6 @@ namespace OpenMVVM.WebView
 
         public async Task<bool> GoBack()
         {
-            //MainPage<TLocator> mainPage = (MainPage<TLocator>)Window.Current.Content;
-
             if (this.CanGoBack)
             {
                 var navigationEventHandlerArgs = new NavigationEventHandlerArgs(this.currentView,

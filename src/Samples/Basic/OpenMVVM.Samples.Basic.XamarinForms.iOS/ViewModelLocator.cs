@@ -17,7 +17,6 @@
             // Services
             ioc.RegisterType<ILifecycleService, IosLifecycleService>();
             ioc.RegisterType<INavigationService, IosNavigationService>();
-            ioc.RegisterType<ICacheService, CacheService>();
             ioc.RegisterType<IContentDialogService, ContentDialogService>();
             ioc.RegisterType<IDispatcherService, DispatcherService>();
             ioc.RegisterType<IDescriptionService, DescriptionService>();

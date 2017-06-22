@@ -23,14 +23,6 @@
 
         private readonly Action onAppReady;
 
-        //public WebViewApp(ViewModelLocatorBase viewModelLocator, Action<string, object> notifyActionArg, Action<string, object> notifyCollection, Action onAppReady)
-        //{
-        //    this.viewModelLocator = viewModelLocator;
-        //    this.notifyAction = notifyActionArg;
-        //    this.notifyCollection = notifyCollection;
-        //    this.onAppReady = onAppReady;
-        //}
-
         public WebViewApp(ViewModelLocatorBase viewModelLocator, IBridge bridge, Action onAppReady)
         {
             this.viewModelLocator = viewModelLocator;
@@ -171,7 +163,6 @@
             }
         }
 
-        // ovu metodu treba srediti da se obrisu hendleri kad uradi rebind
         public void SubscribeForUpdates(object observableObject, string currentPath, bool get, bool insideCollection)
         {
             if (observableObject != null)
@@ -189,27 +180,7 @@
 
                         notifyPropertyChanged.PropertyChanged += bindingInfo.MainViewModelPropertyChanged;
                     }
-
-                    //if (typeInfo.ImplementedInterfaces.Any(i => i == typeof(INotifyPropertyChanged)))
-                    //{
-                    //    var runtimeEvent = vmType.GetRuntimeEvent("PropertyChanged");
-                    //    if (runtimeEvent == null)
-                    //    {
-                    //        runtimeEvent = vmType.GetRuntimeEvent("INotifyPropertyChanged.PropertyChanged");
-                    //    }
-                    //    if (runtimeEvent != null)
-                    //    {
-                    //        var bindingInfo = new BindingInfo(currentPath, this, insideCollection, observableObject);
-                    //        this.bindingInfos.Add(currentPath, bindingInfo);
-
-                    //        runtimeEvent.AddEventHandler(
-                    //            observableObject,
-                    //            new PropertyChangedEventHandler(bindingInfo.MainViewModelPropertyChanged));
-                    //    }
-                    //}
                 }
-
-
 
                 if (typeInfo.ImplementedInterfaces.Any(i => i == typeof(INotifyCollectionChanged)))
                 {

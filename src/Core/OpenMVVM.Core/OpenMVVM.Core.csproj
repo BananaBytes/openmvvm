@@ -43,11 +43,9 @@
     <Compile Include="Pages\PageItemViewModel.cs" />
     <Compile Include="Pages\PageViewModel.cs" />
     <Compile Include="PlatformServices\CalendarEvent.cs" />
-    <Compile Include="PlatformServices\ICacheService.cs" />
     <Compile Include="PlatformServices\IContentDialogService.cs" />
     <Compile Include="PlatformServices\IDescriptionService.cs" />
     <Compile Include="PlatformServices\IDispatcherService.cs" />
-    <Compile Include="PlatformServices\IEventTracker.cs" />
     <Compile Include="PlatformServices\IFileServices.cs" />
     <Compile Include="PlatformServices\IReminderService.cs" />
     <Compile Include="PlatformServices\IWebLauncher.cs" />

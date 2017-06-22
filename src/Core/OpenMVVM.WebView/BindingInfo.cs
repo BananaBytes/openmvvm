@@ -99,14 +99,10 @@ namespace OpenMVVM.WebView
                         this.bridgeMapper.NotifyCollectionChanged(this.RootPath, e);
                         break;
                     case NotifyCollectionChangedAction.Move:
-                        // azurirati izmedju novog i starog indeksa
                         break;
                     case NotifyCollectionChangedAction.Remove:
-                        // kao gore kod add samo kontra. napraviti dobar test case
                         break;
                     case NotifyCollectionChangedAction.Replace:
-                        // remove pa insert, da bi radili bindinzi
-                        // ili rucno se pretplatiti na novi, sto nije dobro
                         break;
                     case NotifyCollectionChangedAction.Reset:
                         var valuePairs =
@@ -119,13 +115,10 @@ namespace OpenMVVM.WebView
 
                         this.bridgeMapper.NotifyCollectionChanged(this.RootPath, e);
                         this.bridgeMapper.NotifyValueChanged(this.rootPath, sender);
-                            // skloniti bindinge na klijentu i serveru i opaliti ponovo procesiranje
                         break;
                     default:
                         throw new ArgumentOutOfRangeException();
                 }
-
-                // _webViewApp.CallJs(this._rootPath, sender);
             }
         }
     }

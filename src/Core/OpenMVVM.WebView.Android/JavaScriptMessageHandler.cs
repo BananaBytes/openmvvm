@@ -22,7 +22,7 @@ namespace OpenMVVM.WebView.Android
         [JavascriptInterface]
         public void Notify(string url)
         {
-                this.NotifyAction(url);
+            this.NotifyAction(url);
         }
     }
 }

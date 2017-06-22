@@ -22,7 +22,7 @@
 
         public NavigationService(RootNavigationPage navigationPage, ILifecycleService lifecycleService)
         {
-            this.NavigationPage = Application.Current.MainPage as RootNavigationPage;// navigationPage;
+            this.NavigationPage = Application.Current.MainPage as RootNavigationPage;
             this.instanceFactory = IocInstanceFactory.Default;
             this.lifecycleService = lifecycleService;
 
@@ -73,7 +73,6 @@
                     }
                 }
 
-                //this.PrePush(page, currentView == null);
                 this.PrePush(desiredPage, false);
                 await this.NavigationPage.Navigation.PushAsync(desiredPage);
                 if (pageToRemove != null)

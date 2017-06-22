@@ -229,7 +229,7 @@ var OpenMVVM = (
                                     var newValue = child.value;
                                     var path = bindingPath;
 
-                                    // converteri i ovde, convert back!
+                                    // this is the place where 'convertBack' can be applied
 
                                     bridgeService.propertySet(path, newValue);
                                 });
@@ -362,6 +362,7 @@ var OpenMVVM = (
             var rootElement = current.rootElement;
             var template = current.template;
 
+            // need to implement all actions
             switch (parameter.Action) {
                 case 0: // add
                     renderCollectionItemFromTemplate(path, template, rootElement, parameter.NewStartingIndex);
@@ -380,7 +381,7 @@ var OpenMVVM = (
                             for (var i = 0; i < affected.length; i++) {
                                 var affectedNodeBinding = affected[i];
                                 if (affectedNodeBinding.insideTemplate) {
-                                    // ovo izmeniti
+                                    // this can be done better
                                     delete elementCache[item];
                                 }
                             }

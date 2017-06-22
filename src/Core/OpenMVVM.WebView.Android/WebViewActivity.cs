@@ -3,8 +3,6 @@
     using System;
 
     using global::Android.App;
-    using global::Android.OS;
-    using global::Android.Views;
     using global::Android.Webkit;
 
     using OpenMVVM.Core;
@@ -31,7 +29,6 @@
             webView.Settings.JavaScriptEnabled = true;
             webView.Settings.AllowFileAccessFromFileURLs = true;
             webView.Settings.AllowUniversalAccessFromFileURLs = true;
-            //global::Android.Webkit.WebView.SetWebContentsDebuggingEnabled(true);
 
             this.AppReady += this.CurrentContentAppReady;
 

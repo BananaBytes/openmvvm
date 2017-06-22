@@ -1,7 +1,5 @@
 ﻿namespace OpenMVVM.WebView.Ios
 {
-    using System;
-
     using cdeutsch;
 
     using Newtonsoft.Json;
