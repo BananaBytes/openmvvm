@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<component format="1" id="jsbridge">
+  <name>JsBridge</name>
+  <publisher>CDeutsch</publisher>
+  <publisher-url>https://github.com/crdeutsch/MonoTouch-JsBridge</publisher-url>
+  <version>1.1</version>
+  <summary>Allows for bidirectional communication with the UIWebView in Monotouch.</summary>
+  <samples>
+    <sample id="JsBridgeExample">
+      <name>iOS Sample.</name>
+      <summary>Demonstrates JsBridge on iOS.</summary>
+    </sample>
+  </samples>
+</component>
