@@ -5,7 +5,7 @@ OpenMVVM project contains of two important sub-projects:
 1. OpenMVVM Framework
 2. OpenMVVM.WebView Project
 
-![OpenMVVM architecture diagram](https://raw.githubusercontent.com/BananaBytes/openmvvm/master/doc/images/OpenMVVMdiagram.PNG)
+![OpenMVVM architecture diagram](https://raw.githubusercontent.com/BananaBytes/openmvvm/master/doc/images/OpenMVVM_diagram.PNG)
 
 ## OpenMVVM Framework
 
