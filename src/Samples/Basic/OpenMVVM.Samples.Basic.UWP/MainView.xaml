@@ -1,0 +1,43 @@
+﻿<Page
+    x:Class="OpenMVVM.Samples.Basic.UWP.MainView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:interactivity="using:Microsoft.Xaml.Interactivity"
+    xmlns:core="using:Microsoft.Xaml.Interactions.Core"
+    mc:Ignorable="d">
+
+    <Page.DataContext>
+        <Binding Source="{StaticResource Locator}" Path="MainViewModel"/>
+    </Page.DataContext>
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <StackPanel Orientation="Vertical">
+            <TextBlock Text="{Binding Title}" FontSize="20" ></TextBlock>
+            <TextBox Text="{Binding SearchInput, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></TextBox>
+            <ListView ItemsSource="{Binding Items}" x:Name="ItemsListView">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Image Margin="5" Grid.Column="0" Source="{Binding ImageUrl}" ></Image>
+                            <StackPanel Grid.Column="1" Margin="0,0,0,20">
+                                <TextBlock FontSize="16" Text="{Binding Title}"></TextBlock>
+                                <TextBlock FontSize="12" Text="{Binding Description}"></TextBlock>
+                            </StackPanel>
+                            <interactivity:Interaction.Behaviors>
+                                <core:EventTriggerBehavior EventName="Tapped">
+                                    <core:InvokeCommandAction Command="{Binding ElementName=ItemsListView, Path=DataContext.NavigateToItemCommand}" CommandParameter="{Binding}"/>
+                                </core:EventTriggerBehavior>
+                            </interactivity:Interaction.Behaviors>
+                        </Grid>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackPanel>
+    </Grid>
+</Page>
