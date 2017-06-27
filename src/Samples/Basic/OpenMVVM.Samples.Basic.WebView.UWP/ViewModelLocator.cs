@@ -15,9 +15,6 @@
         {
             var ioc = IocInstanceFactory.DefaultWeb;
 
-            // Infrastructure
-            ioc.RegisterType<IBridge, WindowsBridge>();
-
             // Services
             ioc.RegisterType<ILifecycleService, LifecycleService>();
             ioc.RegisterType<INavigationService, NavigationService>();
