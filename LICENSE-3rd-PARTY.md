@@ -107,3 +107,7 @@ applies to:
 - [Xamarin.Android.Support.Animated.Vector.Drawable, © 2016 Xamarin Inc. All Rights Reserved.](https://components.xamarin.com/license/xamandroidsupportv4-18)
 - [Xamarin.Android.Support.v7.MediaRouter, © 2016 Xamarin Inc. All Rights Reserved.](https://components.xamarin.com/license/xamandroidsupportv4-18)
 - [Xamarin.Android.Support.Vector.Drawable, © 2016 Xamarin Inc. All Rights Reserved.](https://components.xamarin.com/license/xamandroidsupportv4-18)
+
+## License for MD5 implementation
+applies to:
+- [MD5, Copyright 2002-2005 GL Conseil/Flow Group SAS. All rights reserved.](https://github.com/BananaBytes/openmvvm/blob/master/src/Samples/OpenMVVM.Samples.Basic.ViewModel/Helpers/MD5.cs)
