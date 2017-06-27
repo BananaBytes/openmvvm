@@ -453,3 +453,5 @@ var OpenMVVM = (
         return openmvvm;
     }(OpenMVVM || {})
 );
+
+OpenMVVM.jsBind();

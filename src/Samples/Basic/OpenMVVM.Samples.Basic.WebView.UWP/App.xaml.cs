@@ -33,15 +33,7 @@
         /// <param name="e">Details about the launch request and process.</param>
         protected override void OnLaunched(LaunchActivatedEventArgs e)
         {
-#if DEBUG
-            if (Debugger.IsAttached)
-            {
-                this.DebugSettings.EnableFrameRateCounter = true;
-            }
-
-#endif
             WebViewPage webViewPage = new WebViewPage(new ViewModelLocator());
-
             webViewPage.AppReady += this.CurrentContentAppReady;
 
             Window.Current.Content = webViewPage;
