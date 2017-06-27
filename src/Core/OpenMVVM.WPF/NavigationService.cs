@@ -64,7 +64,7 @@
                 this.frame.Navigated += this.RemoveBackEntry;
             }
 
-            this.currentView = this.frame.Content?.GetType().Name;
+            this.currentView = pageName;
             this.OnNavigatingTo(new NavigationEventHandlerArgs(this.currentView, NavigationType.Forward, parameter));
 
             return true;
