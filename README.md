@@ -21,6 +21,7 @@ Write your viewmodels in C# and let web designers create UI for them, using simp
 Platforms supported so far:
 
 * UWP
+* WPF
 * iOS
 * Android
 
