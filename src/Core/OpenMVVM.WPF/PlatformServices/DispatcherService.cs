@@ -22,17 +22,17 @@
             }
         }
 
-        public Task RunAsync(Action action)
+        public async Task RunAsync(Action action)
         {
             var dispatcher = Application.Current.Dispatcher;
 
             if (dispatcher.CheckAccess())
             {
-                return Task.Run(action);
+                action();
             }
             else
             {
-                return dispatcher.InvokeAsync(action).Task;
+                await dispatcher.InvokeAsync(action);
             }
         }
     }
