@@ -99,3 +99,7 @@ protected override void OnLaunched(LaunchActivatedEventArgs e)
 * This should map to your MainViewModel and its property in ViewModelLocator.
 
 *Notice: You will probably need to use Visual Studio 2017 to build the examples.*
+
+### How it works (architecture diagram)
+
+![OpenMVVM.WebView architecture diagram](https://raw.githubusercontent.com/BananaBytes/openmvvm/master/doc/images/WebView_diagram.png)
