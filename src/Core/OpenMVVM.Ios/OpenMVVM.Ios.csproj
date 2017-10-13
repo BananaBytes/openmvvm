@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{4E066D69-763D-48C0-9DFE-C14E8CEBC40C}</ProjectGuid>
+    <ProjectGuid>{74D004C4-775F-402C-BFE8-B5BDEDC6077F}</ProjectGuid>
     <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <RootNamespace>OpenMVVM.Ios</RootNamespace>
@@ -45,13 +45,12 @@
     <Compile Include="PlatformServices\DispatcherService.cs" />
     <Compile Include="PlatformServices\FileServices.cs" />
     <Compile Include="PlatformServices\IosLifecycleService.cs" />
-    <Compile Include="PlatformServices\ReminderService.cs" />
     <Compile Include="PlatformServices\WebLauncher.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\OpenMVVM.Core\OpenMVVM.Core.csproj">
-      <Project>{EA205EDD-3FCC-4F7A-B61C-22D23E96FEC9}</Project>
+      <Project>{be321862-d593-44c6-b9e6-c57d1b384e17}</Project>
       <Name>OpenMVVM.Core</Name>
     </ProjectReference>
   </ItemGroup>
