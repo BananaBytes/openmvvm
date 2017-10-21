@@ -10,67 +10,36 @@ namespace OpenMVVM.Samples.Basic.WebView.DotNetCore
 
     public class ViewModelLocator : ViewModelLocatorBase
     {
-        private ILifecycleService lifecycleService = new LifecycleService();
-        private IDescriptionService descriptionService = new NullDescriptionService();
+        //private ILifecycleService lifecycleService = new LifecycleService();
+        //private IDescriptionService descriptionService = new NullDescriptionService();
 
-        private INavigationService navigationService;
+        //private INavigationService navigationService;
 
-        public static IBridge Bridge = new NullBridge();
+        //public static IBridge Bridge = new NullBridge();
 
-        private readonly MainViewModel mainViewModel;
+        //private readonly MainViewModel mainViewModel;
 
-        private readonly DetailViewModel detailViewModel;
+        //private readonly DetailViewModel detailViewModel;
 
         public ViewModelLocator()
         {
-            this.navigationService = new NavigationService(this.lifecycleService);
+            var ioc = IocInstanceFactory.DefaultWeb;
 
-            this.mainViewModel = new MainViewModel(this.NavigationService, this.descriptionService);
-            this.detailViewModel = new DetailViewModel(this.NavigationService);
+            // Services
+            ioc.RegisterType<ILifecycleService, LifecycleService>();
+            ioc.RegisterType<INavigationService, NavigationService>();
+            ioc.RegisterType<IDispatcherService, NullDispatcherService>();
+            ioc.RegisterType<IDescriptionService, NullDescriptionService>();
 
-            //var ioc = InstanceFactory;
-
-            //// Infrastructure
-            //ioc.RegisterType<IBridge, WindowsBridge>();
-
-            //// Services
-            //ioc.RegisterType<ILifecycleService, LifecycleService>();
-            //ioc.RegisterType<INavigationService, NavigationService<ViewModelLocator>>();
-            //ioc.RegisterType<ICacheService, CacheService>();
-            //ioc.RegisterType<IContentDialogService, ContentDialogService>();
-            //ioc.RegisterType<IDispatcherService, DispatcherService>();
-            //ioc.RegisterType<IDescriptionService, DescriptionService>();
-
-            //// ViewModels
-            //ioc.RegisterType<MainViewModel>();
-            //ioc.RegisterType<DetailViewModel>();
-
-
-
+            // ViewModels
+            ioc.RegisterType<MainViewModel>();
+            ioc.RegisterType<DetailViewModel>();
         }
 
-        public MainViewModel MainViewModel
-        {
-            get
-            {
-                return this.mainViewModel;
-            }
-        }
+        public MainViewModel MainViewModel => InstanceFactory.GetInstance<MainViewModel>();
 
-        public DetailViewModel DetailViewModel
-        {
-            get
-            {
-                return this.detailViewModel;
-            }
-        }
+        public DetailViewModel DetailViewModel => InstanceFactory.GetInstance<DetailViewModel>();
 
-        public INavigationService NavigationService
-        {
-            get
-            {
-                return this.navigationService;
-            }
-        }
+        public INavigationService NavigationService => InstanceFactory.GetInstance<INavigationService>();
     }
 }
