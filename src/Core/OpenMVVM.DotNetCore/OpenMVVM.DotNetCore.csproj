@@ -5,9 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Reference Include="OpenMVVM.Core">
-      <HintPath>..\OpenMVVM.Core\bin\Debug\OpenMVVM.Core.dll</HintPath>
-    </Reference>
+    <ProjectReference Include="..\OpenMVVM.Core\OpenMVVM.Core.csproj" />
   </ItemGroup>
 
 </Project>

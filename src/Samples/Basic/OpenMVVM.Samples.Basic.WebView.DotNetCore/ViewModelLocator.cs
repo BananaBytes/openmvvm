@@ -7,7 +7,6 @@ namespace OpenMVVM.Samples.Basic.WebView.DotNetCore
     using OpenMVVM.DotNetCore;
     using OpenMVVM.Samples.Basic.ViewModel;
     using OpenMVVM.WebView;
-    using OpenMVVM.WebView.Web.PlatformServices;
 
     public class ViewModelLocator : ViewModelLocatorBase
     {

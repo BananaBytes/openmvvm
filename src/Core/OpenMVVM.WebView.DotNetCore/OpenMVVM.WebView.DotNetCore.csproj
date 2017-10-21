@@ -9,9 +9,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Reference Include="OpenMVVM.WebView">
-      <HintPath>..\OpenMVVM.WebView\bin\Debug\OpenMVVM.WebView.dll</HintPath>
-    </Reference>
+    <ProjectReference Include="..\OpenMVVM.Core\OpenMVVM.Core.csproj" />
+    <ProjectReference Include="..\OpenMVVM.WebView\OpenMVVM.WebView.csproj" />
   </ItemGroup>
 
 </Project>
