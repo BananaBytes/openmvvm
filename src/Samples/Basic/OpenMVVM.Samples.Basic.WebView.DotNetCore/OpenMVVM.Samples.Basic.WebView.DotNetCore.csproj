@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Server.Kestrel" Version="2.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.SignalR.Server" Version="0.2.0-rtm-22752" />
+    <PackageReference Include="Microsoft.AspNetCore.StaticFiles" Version="2.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.WebSockets.Server" Version="0.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="OpenMVVM.Core">
+      <HintPath>..\..\..\Core\OpenMVVM.Core\bin\Debug\OpenMVVM.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenMVVM.Samples.Basic.ViewModel">
+      <HintPath>..\OpenMVVM.Samples.Basic.ViewModel\bin\Debug\OpenMVVM.Samples.Basic.ViewModel.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenMVVM.WebView">
+      <HintPath>..\..\..\Core\OpenMVVM.WebView\bin\Debug\OpenMVVM.WebView.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  
+</Project>
