@@ -1,12 +1,12 @@
-﻿namespace OpenMVVM.WebView.Web.PlatformServices
+﻿namespace OpenMVVM.WebView.DotNetCore
 {
     using System;
 
-    public class NullBridge : Bridge
+    public class DotNetCoreBridge : Bridge
     {
         public EventHandler<BridgeMessage> MessageSent;
 
-        public NullBridge()
+        public DotNetCoreBridge()
         {
             
         }
