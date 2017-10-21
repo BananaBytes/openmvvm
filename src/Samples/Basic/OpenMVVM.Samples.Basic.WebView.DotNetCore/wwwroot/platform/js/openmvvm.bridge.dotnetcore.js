@@ -26,7 +26,7 @@ var receiveMessage = function (context, message) {
 }
 
 var sendMessage = function (message) {
-    openMvvmHubProxy.server.fromJs(JSON.stringify(message));
+    openMvvmHubProxy.server.fromJs(id, JSON.stringify(message));
 }
 
 var openMvvmHubProxy = $.connection.openMvvmHub;

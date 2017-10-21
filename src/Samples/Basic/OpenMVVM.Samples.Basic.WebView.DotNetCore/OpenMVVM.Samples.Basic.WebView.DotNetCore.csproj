@@ -14,15 +14,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Reference Include="OpenMVVM.Core">
-      <HintPath>..\..\..\Core\OpenMVVM.Core\bin\Debug\OpenMVVM.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="OpenMVVM.Samples.Basic.ViewModel">
-      <HintPath>..\OpenMVVM.Samples.Basic.ViewModel\bin\Debug\OpenMVVM.Samples.Basic.ViewModel.dll</HintPath>
-    </Reference>
-    <Reference Include="OpenMVVM.WebView">
-      <HintPath>..\..\..\Core\OpenMVVM.WebView\bin\Debug\OpenMVVM.WebView.dll</HintPath>
-    </Reference>
+    <ProjectReference Include="..\..\..\Core\OpenMVVM.Core\OpenMVVM.Core.csproj" />
+    <ProjectReference Include="..\..\..\Core\OpenMVVM.DotNetCore\OpenMVVM.DotNetCore.csproj" />
+    <ProjectReference Include="..\..\..\Core\OpenMVVM.WebView.DotNetCore\OpenMVVM.WebView.DotNetCore.csproj" />
+    <ProjectReference Include="..\..\..\Core\OpenMVVM.WebView\OpenMVVM.WebView.csproj" />
+    <ProjectReference Include="..\OpenMVVM.Samples.Basic.ViewModel\OpenMVVM.Samples.Basic.ViewModel.csproj" />
   </ItemGroup>
   
 </Project>

@@ -4,4 +4,10 @@
     <TargetFramework>netcoreapp2.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Reference Include="OpenMVVM.Core">
+      <HintPath>..\OpenMVVM.Core\bin\Debug\OpenMVVM.Core.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>

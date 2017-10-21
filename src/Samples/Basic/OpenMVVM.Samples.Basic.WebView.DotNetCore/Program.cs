@@ -9,7 +9,7 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("Hello, OpenMVVM!");
 
             var host = new WebHostBuilder()
                 .UseKestrel()
