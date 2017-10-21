@@ -1,4 +1,4 @@
-﻿namespace OpenMVVM.WebView.Web.PlatformServices
+﻿namespace OpenMVVM.DotNetCore
 {
     using OpenMVVM.Core.PlatformServices.Lifecycle;
 
