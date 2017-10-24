@@ -21,7 +21,8 @@
 
         public static IInstanceFactory Default => instance ?? (instance = new IocInstanceFactory(false));
 
-        public static IInstanceFactory DefaultWeb => instance ?? (instance = new IocInstanceFactory(true));
+        //public static IInstanceFactory DefaultWeb => instance ?? (instance = new IocInstanceFactory(true));
+        public static IInstanceFactory DefaultWeb => (instance = new IocInstanceFactory(true));
 
         public TService GetInstance<TService>()
         {
