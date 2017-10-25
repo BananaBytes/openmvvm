@@ -5,6 +5,7 @@
     using OpenMVVM.Core.PlatformServices.Lifecycle;
     using OpenMVVM.Core.PlatformServices.Navigation;
     using OpenMVVM.Samples.Basic.ViewModel;
+    using OpenMVVM.Samples.Basic.ViewModel.Services;
     using OpenMVVM.WPF;
     using OpenMVVM.WPF.PlatformServices;
 
@@ -17,9 +18,10 @@
             // Services
             ioc.RegisterType<ILifecycleService, LifecycleService>();
             ioc.RegisterType<INavigationService, NavigationService>();
-            // ioc.RegisterType<IContentDialogService, ContentDialogService>();
+            ioc.RegisterType<IContentDialogService, ContentDialogService>();
             ioc.RegisterType<IDispatcherService, DispatcherService>();
             ioc.RegisterType<IDescriptionService, DescriptionService>();
+            ioc.RegisterType<IDataService, DataService>();
 
             // ViewModels
             ioc.RegisterType<MainViewModel>();

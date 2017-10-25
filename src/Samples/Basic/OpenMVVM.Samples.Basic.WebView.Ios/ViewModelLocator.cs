@@ -6,6 +6,7 @@
     using OpenMVVM.Core.PlatformServices.Navigation;
     using OpenMVVM.Ios.PlatformServices;
     using OpenMVVM.Samples.Basic.ViewModel;
+    using OpenMVVM.Samples.Basic.ViewModel.Services;
     using OpenMVVM.WebView;
 
     public class ViewModelLocator : ViewModelLocatorBase
@@ -19,6 +20,8 @@
             ioc.RegisterType<INavigationService, NavigationService>();
             ioc.RegisterType<IDispatcherService, DispatcherService>();
             ioc.RegisterType<IDescriptionService, DescriptionService>();
+            ioc.RegisterType<IContentDialogService, ContentDialogService>();
+            ioc.RegisterType<IDataService, DataService>();
 
             // ViewModels
             ioc.RegisterType<MainViewModel>();

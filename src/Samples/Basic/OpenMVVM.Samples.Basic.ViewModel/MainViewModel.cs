@@ -9,9 +9,12 @@
     using OpenMVVM.Core.PlatformServices;
     using OpenMVVM.Core.PlatformServices.Navigation;
     using OpenMVVM.Samples.Basic.ViewModel.Model;
+    using OpenMVVM.Samples.Basic.ViewModel.Services;
 
     public class MainViewModel : PageViewModel<object>
     {
+        private readonly IDataService dataService;
+
         private readonly List<ItemViewModel> itemList = new List<ItemViewModel>();
 
         private ObservableCollection<ItemViewModel> items = new ObservableCollection<ItemViewModel>();
@@ -22,9 +25,11 @@
 
         private IMvvmCommand navigateToItemCommand;
 
-        public MainViewModel(INavigationService navigationService, IDescriptionService descriptionService)
+        public MainViewModel(INavigationService navigationService, IDescriptionService descriptionService, IDataService dataService)
             : base("MainView", navigationService)
         {
+            this.dataService = dataService;
+
             this.Title = $"Hello, {descriptionService.Platform}!";
         }
 
@@ -58,7 +63,7 @@
 
                 var filteredList = 
                     this.itemList
-                    .Where(i => i.Title.ToLower().Contains(value.ToLower()) || i.Description.ToLower().Contains(value.ToLower()))
+                    .Where(i => (i.Title?.ToLower().Contains(value.ToLower()) ?? false) || (i.Description?.ToLower().Contains(value.ToLower()) ?? false))
                     .ToList();
 
                 this.Items.Clear();
@@ -70,19 +75,22 @@
             }
         }
 
-        protected override void OnNavigatedTo(object parameter)
+        protected override async void OnNavigatedTo(object parameter)
         {
             base.OnNavigatedTo(parameter);
 
             if (!this.initialized)
             {
-                this.itemList.Add(new ItemViewModel(new Item() { Title = "Antoine", Description = "Sed ut" }));
-                this.itemList.Add(new ItemViewModel(new Item() { Title = "Temple", Description = "Perspiciatis unde" }));
-                this.itemList.Add(new ItemViewModel(new Item() { Title = "Sarah", Description = "Ut enim" }));
-                this.itemList.Add(new ItemViewModel(new Item() { Title = "Maira", Description = "Minima veniam" }));
-                this.itemList.Add(new ItemViewModel(new Item() { Title = "Louie", Description = "Sequi nesciunt" }));
-                this.itemList.Add(new ItemViewModel(new Item() { Title = "John", Description = "Totam rem" }));
-                this.itemList.Add(new ItemViewModel(new Item() { Title = "Ardella", Description = "Nemo enim" }));
+                var data = await this.dataService.GetRepositoriesAsync();
+
+                var repositories = data as IList<Repository> ?? data.ToList();
+                if (repositories?.Count() > 0)
+                {
+                    foreach (var item in repositories)
+                    {
+                        this.itemList.Add(new ItemViewModel(new Item() { Title = item.Name, Description = item.Description, ImageUrl = item.Owner.AvatarUrl }));
+                    }
+                }
 
                 this.Items = new ObservableCollection<ItemViewModel>(this.itemList);
 
