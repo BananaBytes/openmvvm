@@ -6,6 +6,7 @@ namespace OpenMVVM.Samples.Basic.WebView.DotNetCore
     using OpenMVVM.Core.PlatformServices.Navigation;
     using OpenMVVM.DotNetCore;
     using OpenMVVM.Samples.Basic.ViewModel;
+    using OpenMVVM.Samples.Basic.ViewModel.Services;
     using OpenMVVM.WebView;
 
     public class ViewModelLocator : ViewModelLocatorBase
@@ -19,6 +20,8 @@ namespace OpenMVVM.Samples.Basic.WebView.DotNetCore
             ioc.RegisterType<INavigationService, NavigationService>();
             ioc.RegisterType<IDispatcherService, DispatcherService>();
             ioc.RegisterType<IDescriptionService, DescriptionService>();
+            ioc.RegisterType<IDataService, DataService>();
+            ioc.RegisterType<IContentDialogService, NullContentDialogService>();
 
             // ViewModels
             ioc.RegisterType<MainViewModel>();
