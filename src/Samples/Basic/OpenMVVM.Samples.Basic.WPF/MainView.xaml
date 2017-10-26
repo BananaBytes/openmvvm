@@ -12,31 +12,34 @@
     </Page.DataContext>
 
     <Grid Background="White">
-        <StackPanel Orientation="Vertical">
-            <TextBlock Text="{Binding Title}" FontSize="20" ></TextBlock>
-            <TextBox Text="{Binding SearchInput, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></TextBox>
-            <ListView ItemsSource="{Binding Items}" x:Name="ItemsListView">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="Auto"></ColumnDefinition>
-                                <ColumnDefinition Width="*"></ColumnDefinition>
-                            </Grid.ColumnDefinitions>
-                            <Image Margin="5" Grid.Column="0" Source="{Binding ImageUrl}" ></Image>
-                            <StackPanel Grid.Column="1" Margin="0,0,0,20">
-                                <TextBlock FontSize="16" Text="{Binding Title}"></TextBlock>
-                                <TextBlock FontSize="12" Text="{Binding Description}"></TextBlock>
-                            </StackPanel>
-                            <i:Interaction.Triggers>
-                                <i:EventTrigger EventName="MouseLeftButtonUp">
-                                    <i:InvokeCommandAction Command="{Binding ElementName=ItemsListView, Path=DataContext.NavigateToItemCommand}" CommandParameter="{Binding}"/>
-                                </i:EventTrigger>
-                            </i:Interaction.Triggers>
-                        </Grid>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-        </StackPanel>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="{Binding Title}" FontSize="20" ></TextBlock>
+        <TextBox Grid.Row="1" Text="{Binding SearchInput, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></TextBox>
+        <ListView Grid.Row="2" ItemsSource="{Binding Items}" x:Name="ItemsListView">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Image Margin="5" Grid.Column="0" Source="{Binding ImageUrl}" MaxWidth="64"/>
+                        <StackPanel Grid.Column="1" Margin="0,0,0,20">
+                            <TextBlock FontSize="16" Text="{Binding Title}"></TextBlock>
+                            <TextBlock FontSize="12" Text="{Binding Description}"></TextBlock>
+                        </StackPanel>
+                        <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="MouseLeftButtonUp">
+                                <i:InvokeCommandAction Command="{Binding ElementName=ItemsListView, Path=DataContext.NavigateToItemCommand}" CommandParameter="{Binding}"/>
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
     </Grid>
 </Page>
