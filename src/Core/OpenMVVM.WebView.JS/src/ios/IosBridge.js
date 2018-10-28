@@ -1,4 +1,4 @@
-﻿import "./mt";
+﻿import "../../lib/mt";
 
 class IosBridge {
     constructor() {

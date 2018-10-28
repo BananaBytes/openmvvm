@@ -72,7 +72,7 @@
         var actionsAttributeValue = child.getAttribute("data-actions");
         if (actionsAttributeValue) {
 
-            var context = dataContext;
+            var context = dataContext; // eslint-disable-line no-unused-vars
             var bindingDescriptor = eval("(" + actionsAttributeValue + ")");
             for (var key in bindingDescriptor) {
                 if (bindingDescriptor.hasOwnProperty(key)) {
@@ -110,7 +110,7 @@
         var bindAttributeValue = child.getAttribute("data-bind");
         if (bindAttributeValue) {
             var that = this;
-            var context = dataContext;
+            var context = dataContext; // eslint-disable-line no-unused-vars
             var bindingDescriptor = eval("(" + bindAttributeValue + ")");
             for (var key in bindingDescriptor) {
                 if (bindingDescriptor.hasOwnProperty(key)) {
@@ -138,7 +138,7 @@
                     
                     if (key === "value") {
                         if (child.type === "radio") {
-                            var bpath = bindingPath;
+                            var bpath = bindingPath; // eslint-disable-line no-redeclare
                             
                             child.addEventListener("change",
                                 function () {
@@ -155,7 +155,7 @@
                                 });
                         }
                         else {
-                            var bpath = bindingPath;
+                            var bpath = bindingPath; // eslint-disable-line no-redeclare
                             child.addEventListener("input",
                                 function () {
                                     var newValue = child.value;
@@ -168,7 +168,7 @@
                     }
                     if (key === "checked") {
                         if (child.type === "checkbox") {
-                            var bpath = bindingPath;
+                            var bpath = bindingPath; // eslint-disable-line no-redeclare
                             child.addEventListener("change",
                                 function () {
                                     var newValue = child.checked;

@@ -1,4 +1,4 @@
-﻿import "./base64.min";
+﻿import "../../lib/base64.min";
 
 class AndroidBridge {
     constructor() {

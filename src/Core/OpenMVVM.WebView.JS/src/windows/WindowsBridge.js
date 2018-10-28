@@ -14,7 +14,6 @@
     
     receiveMessage(context, message) {
         var messageObject = JSON.parse(message);
-        console.log("RECEIVED: ___ " + messageObject.FunctionName);
         this.service[messageObject.FunctionName].apply(this, messageObject.Params);
     }
 

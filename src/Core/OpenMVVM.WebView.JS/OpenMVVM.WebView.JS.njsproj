@@ -37,7 +37,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="src\android\AndroidBridge.js" />
-    <Compile Include="src\android\base64.min.js" />
+    <Compile Include="lib\base64.min.js" />
     <Compile Include="src\android\openmvvm.android.js" />
     <Compile Include="src\android\ViewLoader.js" />
     <Compile Include="src\BridgeMapper.js" />
@@ -45,10 +45,9 @@
     <Compile Include="src\dotnetcore\SignalrBridge.js" />
     <Compile Include="src\dotnetcore\ViewLoader.js" />
     <Compile Include="src\ios\IosBridge.js" />
-    <Compile Include="src\ios\mt.js" />
+    <Compile Include="lib\mt.js" />
     <Compile Include="src\ios\openmvvm.ios.js" />
     <Compile Include="src\ios\ViewLoader.js" />
-    <Compile Include="src\openmvvm.js" />
     <Compile Include="src\OpenMvvmService.js" />
     <Compile Include="src\ParserService.js" />
     <Compile Include="src\RendererService.js" />
@@ -61,6 +60,7 @@
     <Compile Include="webpack.config.js" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="lib\" />
     <Folder Include="src\" />
     <Folder Include="src\android\" />
     <Folder Include="src\dotnetcore\" />
