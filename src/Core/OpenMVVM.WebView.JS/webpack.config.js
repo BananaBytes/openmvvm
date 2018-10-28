@@ -1,4 +1,3 @@
-/// <binding AfterBuild='Run - Development' />
 "use strict";
 
 module.exports = {
