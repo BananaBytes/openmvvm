@@ -30,6 +30,7 @@
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
   <ItemGroup>
+    <Content Include=".babelrc" />
     <Content Include=".eslintrc.json" />
     <Content Include=".gitignore" />
     <Content Include="package.json" />
@@ -57,10 +58,15 @@
     <Compile Include="src\wpf\openmvvm.wpf.js" />
     <Compile Include="src\wpf\ViewLoader.js" />
     <Compile Include="src\wpf\WpfBridge.js" />
+    <Compile Include="test\test-sample.js">
+      <SubType>Code</SubType>
+      <TestFramework>Mocha</TestFramework>
+    </Compile>
     <Compile Include="webpack.config.js" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="lib\" />
+    <Folder Include="test\" />
     <Folder Include="src\" />
     <Folder Include="src\android\" />
     <Folder Include="src\dotnetcore\" />
