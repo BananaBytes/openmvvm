@@ -94,18 +94,11 @@
     <Content Include="..\..\..\Core\JS\platform\css\openmvvm.css">
       <Link>www\platform\css\openmvvm.css</Link>
     </Content>
-    <Content Include="..\..\..\Core\JS\platform\js\openmvvm.bridge.ios.js">
-      <Link>www\platform\js\openmvvm.bridge.ios.js</Link>
-    </Content>
-    <Content Include="..\..\..\Core\JS\platform\js\openmvvm.js">
-      <Link>www\platform\js\openmvvm.js</Link>
-    </Content>
-    <Content Include="..\..\..\Core\JS\platform\js\oss\mt.js">
-      <Link>www\platform\js\oss\mt.js</Link>
+    <Content Include="..\..\..\Core\OpenMVVM.WebView.JS\dist\openmvvm.ios.js">
+      <Link>www\platform\js\openmvvm.ios.js</Link>
     </Content>
     <Content Include="www\css\style.css" />
     <Content Include="www\index.html" />
-    <Content Include="www\js\app.js" />
     <Content Include="www\Views\DetailView.html" />
     <Content Include="www\Views\MainView.html" />
     <None Include="Info.plist" />

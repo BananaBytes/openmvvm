@@ -12,6 +12,8 @@
 
         private bool active;
 
+        private string title;
+
         public PageItemViewModel(MultiPageViewModel<TParam> parentMultiPage)
         {
             this.ParentMultiPage = parentMultiPage;
@@ -30,7 +32,11 @@
             }
         }
 
-        public string Title { get; set; }
+        public string Title
+        {
+            get => this.title;
+            set => this.Set(ref this.title, value);
+        }
 
         public string Icon { get; set; }
 

@@ -20,5 +20,13 @@
     <ProjectReference Include="..\..\..\Core\OpenMVVM.WebView\OpenMVVM.WebView.csproj" />
     <ProjectReference Include="..\OpenMVVM.Samples.Basic.ViewModel\OpenMVVM.Samples.Basic.ViewModel.csproj" />
   </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\platform\js\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\..\Core\OpenMVVM.WebView.JS\dist\openmvvm.dotnetcore.js" Link="wwwroot\platform\js\openmvvm.dotnetcore.js" />
+  </ItemGroup>
   
 </Project>

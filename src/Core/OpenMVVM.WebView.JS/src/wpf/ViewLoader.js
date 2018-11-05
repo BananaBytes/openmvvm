@@ -1,6 +1,6 @@
 class ViewLoader {
     loadView(viewName, callback) {
-        var xhr = new window.ActiveXObject("Msxml2.XMLHTTP");
+        var xhr = new ActiveXObject("Msxml2.XMLHTTP"); // eslint-disable-line no-undef
         xhr.open("GET", "Views/" + viewName + ".html", true);
 
         xhr.onreadystatechange = function () {

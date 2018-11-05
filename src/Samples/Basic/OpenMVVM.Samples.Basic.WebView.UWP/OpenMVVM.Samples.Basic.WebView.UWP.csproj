@@ -108,11 +108,8 @@
     <Content Include="..\..\..\Core\JS\platform\css\openmvvm.css">
       <Link>www\platform\css\openmvvm.css</Link>
     </Content>
-    <Content Include="..\..\..\Core\JS\platform\js\openmvvm.bridge.windows.js">
-      <Link>www\platform\js\openmvvm.bridge.windows.js</Link>
-    </Content>
-    <Content Include="..\..\..\Core\JS\platform\js\openmvvm.js">
-      <Link>www\platform\js\openmvvm.js</Link>
+    <Content Include="..\..\..\Core\OpenMVVM.WebView.JS\dist\openmvvm.windows.js">
+      <Link>www\platform\js\openmvvm.windows.js</Link>
     </Content>
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
@@ -124,7 +121,6 @@
     <Content Include="Assets\Wide310x150Logo.scale-200.png" />
     <Content Include="www\css\style.css" />
     <Content Include="www\index.html" />
-    <Content Include="www\js\app.js" />
     <Content Include="www\Views\DetailView.html" />
     <Content Include="www\Views\MainView.html" />
   </ItemGroup>
