@@ -37,6 +37,12 @@
     <Content Include="README.md" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="dist\openmvvm.android.js" />
+    <Compile Include="dist\openmvvm.dotnetcore.js" />
+    <Compile Include="dist\openmvvm.ios.js" />
+    <Compile Include="dist\openmvvm.test.js" />
+    <Compile Include="dist\openmvvm.windows.js" />
+    <Compile Include="dist\openmvvm.wpf.js" />
     <Compile Include="src\android\AndroidBridge.js" />
     <Compile Include="lib\base64.min.js" />
     <Compile Include="src\android\openmvvm.android.js" />
@@ -65,6 +71,7 @@
     <Compile Include="webpack.config.js" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="dist\" />
     <Folder Include="lib\" />
     <Folder Include="test\" />
     <Folder Include="src\" />

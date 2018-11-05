@@ -56,15 +56,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "css", "css", "{AE0931BE-D7B
 		Core\JS\platform\css\openmvvm.css = Core\JS\platform\css\openmvvm.css
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "js", "js", "{5ED67109-6E6B-44E9-9A56-731CB1000294}"
-	ProjectSection(SolutionItems) = preProject
-		Core\JS\platform\js\openmvvm.bridge.android.js = Core\JS\platform\js\openmvvm.bridge.android.js
-		Core\JS\platform\js\openmvvm.bridge.ios.js = Core\JS\platform\js\openmvvm.bridge.ios.js
-		Core\JS\platform\js\openmvvm.bridge.windows.js = Core\JS\platform\js\openmvvm.bridge.windows.js
-		Core\JS\platform\js\openmvvm.bridge.wpf.js = Core\JS\platform\js\openmvvm.bridge.wpf.js
-		Core\JS\platform\js\openmvvm.js = Core\JS\platform\js\openmvvm.js
-	EndProjectSection
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{6F1CD86B-E517-4DB1-AFCC-A6361855378F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Samples", "Samples", "{8060A387-119C-404B-A173-35C50C6FC4C8}"
@@ -1582,7 +1573,6 @@ Global
 		{62D4D1C7-671E-47D4-BDE3-0EBB4E0EC2C1} = {79849736-2CFE-4439-9E5A-D61EFA3856FD}
 		{3CC82DA3-51C7-4344-AC2E-F1C7198B9C2B} = {62D4D1C7-671E-47D4-BDE3-0EBB4E0EC2C1}
 		{AE0931BE-D7BD-43AF-882A-377A36FCB664} = {3CC82DA3-51C7-4344-AC2E-F1C7198B9C2B}
-		{5ED67109-6E6B-44E9-9A56-731CB1000294} = {3CC82DA3-51C7-4344-AC2E-F1C7198B9C2B}
 		{09949CBD-FC59-4F95-B39A-0ECEFA0A79B4} = {6F1CD86B-E517-4DB1-AFCC-A6361855378F}
 		{85A2865F-263E-4EE6-8CD1-F028806BD819} = {09949CBD-FC59-4F95-B39A-0ECEFA0A79B4}
 		{797013BD-7DC4-4609-82BA-13A9370DAD97} = {62A59DF1-E7DE-4F7D-A6E8-0ED5059F6FB1}

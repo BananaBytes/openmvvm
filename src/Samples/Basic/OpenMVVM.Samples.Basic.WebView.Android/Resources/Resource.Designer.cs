@@ -26,10 +26,6 @@ namespace OpenMVVM.Samples.Basic.WebView.Android
 		
 		public static void UpdateIdValues()
 		{
-			global::OpenMVVM.Android.Resource.String.ApplicationName = global::OpenMVVM.Samples.Basic.WebView.Android.Resource.String.ApplicationName;
-			global::OpenMVVM.Android.Resource.String.Hello = global::OpenMVVM.Samples.Basic.WebView.Android.Resource.String.Hello;
-			global::OpenMVVM.WebView.Android.Resource.String.ApplicationName = global::OpenMVVM.Samples.Basic.WebView.Android.Resource.String.ApplicationName;
-			global::OpenMVVM.WebView.Android.Resource.String.Hello = global::OpenMVVM.Samples.Basic.WebView.Android.Resource.String.Hello;
 		}
 		
 		public partial class Attribute

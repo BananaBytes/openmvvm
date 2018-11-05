@@ -1,9 +1,8 @@
-﻿namespace OpenMVVM.DotNetCore
+﻿using System.Threading.Tasks;
+using OpenMVVM.Core.PlatformServices;
+
+namespace OpenMVVM.DotNetCore.PlatformServices
 {
-    using System.Threading.Tasks;
-
-    using OpenMVVM.Core.PlatformServices;
-
     public class NullContentDialogService : IContentDialogService
     {
         public Task Alert(string title, string message)

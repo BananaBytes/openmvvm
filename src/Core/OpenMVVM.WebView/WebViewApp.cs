@@ -108,9 +108,10 @@
             this.SubscribeForUpdates(currentPropertyInstance, viewModelName, false, insideCollection);
 
             string[] bindingSegments = strings.Skip(1).ToArray();
-            int? index = null;
+            
             foreach (string bindingSegment in bindingSegments)
             {
+                int? index = null;
                 string propName = bindingSegment;
                 if (bindingSegment.EndsWith("]"))
                 {
@@ -217,18 +218,80 @@
 
         public void PropertySet(string bpath, object value)
         {
-            try
-            {
-                var strings = bpath.Split('.');
-                string vmName = strings[0];
-                string propName = strings[1];
+            //try
+            //{
+            //    var strings = bpath.Split('.');
+            //    string vmName = strings[0];
+            //    string propName = strings[1];
 
-                var viewModelPropertyInfo = this.viewModelLocator.GetType().GetRuntimeProperties().First(p => p.Name == vmName);
-                var propertyInfo = viewModelPropertyInfo.PropertyType.GetRuntimeProperties()
-                    .First(p => p.Name == propName);
-                propertyInfo.SetValue(viewModelPropertyInfo.GetValue(this.viewModelLocator), value);
+            //    var viewModelPropertyInfo = this.viewModelLocator.GetType().GetRuntimeProperties().First(p => p.Name == vmName);
+            //    var propertyInfo = viewModelPropertyInfo.PropertyType.GetRuntimeProperties()
+            //        .First(p => p.Name == propName);
+            //    propertyInfo.SetValue(viewModelPropertyInfo.GetValue(this.viewModelLocator), value);
+            //}
+            //catch (Exception) { }
+
+            var strings = bpath.Split('.');
+            string viewModelName = strings[0];
+
+            PropertyInfo viewModelPropertyInfo = this.viewModelLocator.GetType().GetRuntimeProperty(viewModelName);
+
+            var currentPropertyType = viewModelPropertyInfo.PropertyType;
+            var currentPropertyInstance = viewModelPropertyInfo.GetValue(this.viewModelLocator);
+            var currentPath = viewModelName;
+
+            string[] bindingSegments = strings.Skip(1).ToArray();
+            
+            PropertyInfo runtimePropertyInfo = null;
+            object lastObject = null;
+            foreach (string bindingSegment in bindingSegments)
+            {
+                int? index = null;
+                string propName = bindingSegment;
+                if (bindingSegment.EndsWith("]"))
+                {
+                    var split = bindingSegment.Split('[');
+                    propName = split[0];
+                    index = int.Parse(split[1].TrimEnd(']'));
+                }
+
+                try
+                {
+                    runtimePropertyInfo = currentPropertyType.GetRuntimeProperty(propName);
+
+                    if (runtimePropertyInfo == null)
+                    {
+                        return;
+                    }
+
+                    lastObject = currentPropertyInstance;
+                    currentPropertyInstance = runtimePropertyInfo.GetValue(currentPropertyInstance);
+
+                    if (currentPropertyInstance is IList && index != null)
+                    {
+                        if (((IList)currentPropertyInstance).Count > 0)
+                        {
+                            currentPropertyInstance = ((IList)currentPropertyInstance)[index.Value];
+                            currentPropertyType = currentPropertyInstance.GetType();
+                            currentPath = $"{currentPath}.{propName}[{index.Value}]";
+                        }
+                        else
+                        {
+                            return;
+                        }
+                    }
+                    else
+                    {
+                        currentPropertyType = runtimePropertyInfo.PropertyType;
+                        currentPath = $"{currentPath}.{propName}";
+                    }
+                }
+                catch (Exception)
+                {
+
+                }
             }
-            catch (Exception) { }
+            runtimePropertyInfo.SetValue(lastObject, value);
         }
 
         public void FireCommand(string bpath, string param)

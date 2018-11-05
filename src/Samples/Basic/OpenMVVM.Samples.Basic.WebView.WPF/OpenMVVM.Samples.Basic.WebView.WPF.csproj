@@ -120,13 +120,8 @@
       <Link>www\platform\css\openmvvm.css</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="..\..\..\Core\JS\platform\js\openmvvm.bridge.wpf.js">
-      <Link>www\platform\js\openmvvm.bridge.wpf.js</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\..\..\Core\JS\platform\js\openmvvm.js">
-      <Link>www\platform\js\openmvvm.js</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <Content Include="..\..\..\Core\OpenMVVM.WebView.JS\dist\openmvvm.wpf.js">
+      <Link>www\platform\js\openmvvm.wpf.js</Link>
     </Content>
     <Content Include="www\css\style.css">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
